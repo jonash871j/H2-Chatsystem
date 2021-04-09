@@ -1,6 +1,9 @@
 const url = "http://chillyskye.dk/api/";
 
 $(document).ready(function(){ 
+    // Gets name from local stoarge
+    document.getElementById("nameFieldId").value = localStorage.getItem("nameKey");
+
     var chat = new ChatSystem();
     chat.start();
 });
@@ -53,6 +56,7 @@ class ChatSystem{
     sendMessage(){
         var name = document.getElementById("nameFieldId").value;
         var message = document.getElementById("messageFieldId").value;
+        document.getElementById("messageFieldId").value = "";
 
         // Error checks if the text fields is empty
         if (name == "" || (message == "")){
@@ -64,6 +68,10 @@ class ChatSystem{
             alert("Beskeden er for lang, den er over 300 tegn!");
             return;
         }
+
+        // Saves name to local stoarge
+        localStorage.setItem("nameKey", name);
+
         // Makes api post call to web server
         $.ajax({
             url: url,
