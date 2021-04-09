@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat System</title>
+
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="chatsystem.js"></script>
+</head>
+<body>
+
+    <div class="chatContainer container ">
+        <h1>Chat System</h1>
+        <h4>Seneste beskeder</h2>
+        <textarea id="chatAreaId" type="text" cols="128" rows="20" class="form-control" readonly></textarea>
+
+
+        <br/>
+        <div class="input-group mb-3">
+            <input id="nameFieldId" type="textfield" placeholder="Skriv dit navn her" maxlength="15" class="form-control col-lg-2">
+            
+            <input id="messageFieldId" type="textfield" placeholder="Skriv din besked her" maxlength="300" class="form-control col-lg-6">
+            <div class="input-group-prepend">
+                <button id="sendMessageButtonId" type="button" class="btn btn-primary">Send</button>
+            </div>
+          </div>
+
+
+    </div>
+
+</body>
+</html>
